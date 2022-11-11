@@ -25,4 +25,16 @@ public class TestController {
             return "参数小于100";
         }else return String.valueOf((a*b));
     }
+
+    @GetMapping("/subtract")
+    public String subtractTest(@RequestParam(name="a")int a, @RequestParam(name="b")int b){
+        if (a<b){
+            return "a大于b";
+        }
+        if(a<= 0|b <= 0){
+            return "参数大于0";
+        }else if (a>=100|b>=100){
+            return "参数小于100";
+        }else return String.valueOf((a-b));
+    }
 }
